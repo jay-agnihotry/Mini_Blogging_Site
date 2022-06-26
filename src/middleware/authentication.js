@@ -12,10 +12,6 @@ const authenticate = async function (req, res, next) {
         let decodedToken = jwt.verify(token, "blogProject");
 
     } catch (error) {return res.status(500).send({ status: false, msg: error.message })};
-
     next();
-
 }
-
 module.exports.authenticate = authenticate
-

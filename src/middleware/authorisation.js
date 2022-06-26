@@ -20,7 +20,6 @@ const authorise = function (req, res, next) {
 }
 module.exports.authorise = authorise;
 
-
 const authorised = async function (req, res, next) {
     try {
         let token = req.headers["x-api-key"];
@@ -33,7 +32,7 @@ const authorised = async function (req, res, next) {
         let blogId= req.params.blogId;
         var regex = /^[0-9a-f]{24}$/;
         if (!regex.test(blogId)) 
-           return res.status(400).send({ status: false, msg: `blodId is not valid` });
+           return res.status(400).send({ status: false, msg: `blogId is not valid` });
            
         let authorIdByBlog= await blogModel.findById(blogId).select({authorId:1, _id:0});
         let newAuthorId = authorIdByBlog.authorId;

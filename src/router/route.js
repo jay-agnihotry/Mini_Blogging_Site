@@ -14,12 +14,3 @@ router.put("/blogs/:blogId", authentication.authenticate, authorisation.authoris
 router.delete("/blogs/:blogId", authentication.authenticate, authorisation.authorised, blogController.blogDeleteById);
 router.delete("/blogDeleteByQuery",authentication.authenticate, authorisation.authorise, blogController.blogDeleteByQuery);
 module.exports = router;
-
-
-
-
-
-
-
-
-

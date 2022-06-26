@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose
   .connect(
-    "mongodb+srv://NishantGautam:Ng123@cluster0.45vj3.mongodb.net/NishantGautam-DB",
+    "mongodb+srv://jay123:pqwoie123@cluster0.xlqz2mn.mongodb.net/jay-DB",
     {
       useNewUrlParser: true,
     }
@@ -17,7 +17,7 @@ mongoose
   .then(() => console.log("Hello Nishant! MongoDb is connected"))
   .catch((err) => console.log(err));
 
-app.use(validation.validateRequest);
+//app.use(validation.validateRequest);
 app.use("/", route);
 
 app.listen(process.env.PORT || 3000, function () {
