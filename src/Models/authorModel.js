@@ -16,8 +16,11 @@ const authorSchema = new mongoose.Schema(
     },
     email:{
       type:String,
+      trim: true,
+      lowercase: true,
       required:true,
-      unique: true
+      unique: true,
+      requierd: `email is requiered`
     },
     password: {
       type: String,

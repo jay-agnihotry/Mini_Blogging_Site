@@ -5,6 +5,7 @@ const jwt= require("jsonwebtoken")
 const createAuthor= async function(req, res){
  try{
   let data = req.body;
+  //data.title = data.title.trim()
   if(Object.keys(data).length!==0){
     let savedData= await authorModel.create(data);
     res.status(201).send({status: true , data: savedData});
@@ -22,7 +23,7 @@ try {
     loginCredentials["email"]= req.body.email;
   }
   if(req.body.password){
-    loginCredentials["password"]= req.body.password;
+    loginCredentials["pass-word"]= req.body.password;
   }
   if(Object.keys(loginCredentials).length===0) return res.status(400).send({status: false, msg: "Bad request! Body should only contain valid email and password."});
   let authorDetails= await authorModel.findOne(loginCredentials);
@@ -31,7 +32,7 @@ try {
     {
       authorId: authorDetails._id.toString(),
     }, "blogProject");
-  req.setHeader("x-api-key", token);
+  res.setHeader("x-api-key", token);
   res.status(201).send({ status: true, token: token })
 
 }catch(err){res.status(500).send({ msg: "Error", error: err.message })}

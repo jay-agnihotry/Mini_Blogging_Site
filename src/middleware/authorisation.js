@@ -30,6 +30,7 @@ const authorised = async function (req, res, next) {
         let decodedToken = jwt.verify(token, "blogProject");
         console.log(decodedToken)
         let blogId= req.params.blogId;
+        if(mongoose.isValidObjectId(blogId))
         var regex = /^[0-9a-f]{24}$/;
         if (!regex.test(blogId)) 
            return res.status(400).send({ status: false, msg: `blogId is not valid` });

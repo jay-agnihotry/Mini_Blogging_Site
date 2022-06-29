@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const route = require("./router/route.js");
 const { default: mongoose } = require("mongoose");
 const app = express();
-const validation= require("./middleware/validation");
+//const validation= require("./middleware/validation");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -14,7 +14,7 @@ mongoose
       useNewUrlParser: true,
     }
   )
-  .then(() => console.log("Hello Nishant! MongoDb is connected"))
+  .then(() => console.log("Hi Jay! MongoDb is connected"))
   .catch((err) => console.log(err));
 
 //app.use(validation.validateRequest);
