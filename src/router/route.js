@@ -5,7 +5,7 @@ const blogController= require("../Controllers/blogController");
 const authentication= require("../middleware/authentication");
 const authorisation= require("../middleware/authorisation");
 
-
+  
 router.post("/authors", authorController.createAuthor);
 router.post("/login", authorController.authorLogin);
 router.post("/blogs", authentication.authenticate, blogController.createBlog);

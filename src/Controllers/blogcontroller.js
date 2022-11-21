@@ -59,7 +59,7 @@ const updateBlog = async (req, res) => {
       blog["subCategory"] = lodash.uniq(blogToBeUpdted.subCategory.concat(req.body.subCategory));
       blog["isPublished"] = true
       blog["publishedAt"] = moment().format("YYYY-MM-DDThh:mm:ss.SSS[Z]");
-
+ 
       let blogUpdated = await blogModel.findOneAndUpdate({ _id: blogId }, blog, { new: true, upsert: true, strict: false })
       console.log(blogUpdated);  
       if (!blogUpdated) {

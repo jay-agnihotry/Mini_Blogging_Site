@@ -6,7 +6,7 @@ const authorise = function (req, res, next) {
     try {
         let token = req.headers["x-api-key"];
         if (!token) {
-
+ 
             token = req.headers["X-Api-Key"];
         }
         let decodedToken = jwt.verify(token, "blogProject");

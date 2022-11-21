@@ -11,7 +11,7 @@ const validateTags = (tags) => {
     return tags
 
 }
-//  "asgh,gdh,dghd,h" aftersplit ["asgh","gdh","dghd","h"]
+//  "asgh,gdh,dghd,h" aftersplit ["asgh","gdh","dghd","h"]//
 
 const validateSubCategory = (subCategory) => {
     if (!Array.isArray(subCategory)) {

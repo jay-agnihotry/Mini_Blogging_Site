@@ -12,7 +12,7 @@ mongoose
     "mongodb+srv://jay123:pqwoie123@cluster0.xlqz2mn.mongodb.net/jay-DB",
     {
       useNewUrlParser: true,
-    }
+    } 
   )
   .then(() => console.log("Hi Jay! MongoDb is connected"))
   .catch((err) => console.log(err));

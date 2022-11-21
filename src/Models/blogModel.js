@@ -8,7 +8,7 @@ const blogSchema = new mongoose.Schema(
   },
   body:{
     type: String,
-    required: true
+    required: true 
   },
   authorId:{
     type: ObjectId,
